@@ -62,15 +62,15 @@ jobs:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         IMAGE_TAG: ${{ github.sha }}
       run: |
-        sed -i "s|demo-webapp-dev:latest|$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG|g" k8s/deployment.yaml
+        sed -i "s|demo-webapp-dev:latest|$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG|g" K8s/deployment.yaml
         
         
-        kubectl apply -f k8s/namespace.yaml
-        kubectl apply -f k8s/configmap.yaml
-        kubectl apply -f k8s/deployment.yaml
-        kubectl apply -f k8s/service.yaml
-        kubectl apply -f k8s/hpa.yaml
-        kubectl apply -f k8s/ingress.yaml
+        kubectl apply -f K8s/namespace.yaml
+        kubectl apply -f K8s/configmap.yaml
+        kubectl apply -f K8s/deployment.yaml
+        kubectl apply -f K8s/service.yaml
+        kubectl apply -f K8s/hpa.yaml
+        kubectl apply -f K8s/ingress.yaml
         
       
         kubectl rollout status deployment/webapp-deployment -n webapp --timeout=300s
