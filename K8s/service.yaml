@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-service
+  namespace: webapp
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-subnets: "subnet-043b7e4491f631fa1,subnet-0a8be650172f7eb34,subnet-0bb2aefd2a73e33fc"
+spec:
+  selector:
+    app: webapp
+    version: v1
+  ports:
+  - name: http
+    port: 80
+    targetPort: 3000
+    protocol: TCP
+  type: LoadBalancer

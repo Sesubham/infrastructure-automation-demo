@@ -1,0 +1,14 @@
+cat > package.json << 'EOF'
+{
+  "name": "demo-webapp",
+  "version": "1.0.0",
+  "description": "Demo Node.js app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "4.18.2"
+  }
+}
+EOF

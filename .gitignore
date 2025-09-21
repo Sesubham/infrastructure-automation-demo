@@ -1,0 +1,17 @@
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+**/.terraform/
+.terraform.lock.hcl
+
+# Node.js  
+node_modules/
+package-lock.json
+
+# AWS
+.aws/
+
+# IDE
+.vscode/
+.DS_Store
